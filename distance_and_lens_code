@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Virtual image distance = 3 m
+di = -3000  # mm
+
+# Object distance from 10 mm to 100 mm
+do = np.linspace(10, 100, 1000)
+
+# Lens equation
+f = 1 / ((1/do) + (1/di))
+
+# Convert focal length to Diopters
+D = 1000 / f
+
+plt.figure(figsize=(12,5))
+plt.plot(do, D, linewidth=2)
+
+plt.xlabel("Object Distance (mm)")
+plt.ylabel("Lens Power (D)")
+plt.title("Lens Power Required for Virtual Image at 3 m")
+
+plt.xlim(10, 100)
+plt.ylim(0, 105)
+
+plt.grid(True)
+plt.show()
+
+# output link -> https://colab.research.google.com/drive/1mTwLit12AS5H2BBxhpEF6sf8p2lwl7Fo#scrollTo=w6A-zOW0YQl4&fullscreenOutput=true  
